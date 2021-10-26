@@ -8,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>The Beatles QUIZ</h1>
-    <div id='questionContainer'>
-        <ol id='questionList'>
+   
+    <h1>The Beatles QUIZ</h1> <div>
+        <button id='colorMode'>Dark mode</button>
+    </div>
+    <div id='qa-container'>
+        <ol id='qa-list'>
             <li>Which year did the Beatles form?</li>
             <label for="1959">1959</label><input type="radio" name="year" value='wrong' id="1959">
             <label for="1960">1960</label><input type="radio" name="year" value='right' id="1960">
@@ -51,13 +54,14 @@
             <label for="let">Let It Be</label><input type="radio" name="last" value= "right" id="let">
             <label for="white">The Beatles(The White Album)</label><input type="radio" name="last" value="wrong" id="white">
             <li>Which year did Paul McCartney issue a press release stating the bands break-up?</li>
-            <label for="1970">1970</label><input type="radio" name="break-up" id="1970">
-            <label for="1971">1971</label><input type="radio" name="break-up" id="1971">
-            <label for="1972">1972</label><input type="radio" name="break-up" id="1972">
+            <label for="1970">1970</label><input type="radio" name="break-up" id="1970" value="right">
+            <label for="1971">1971</label><input type="radio" name="break-up" id="1971" value="wrong">
+            <label for="1972">1972</label><input type="radio" name="break-up" id="1972" value="wrong">
         </ol>
     </div>
-    <button>Check answers!</button>
-    <button>Retry quiz</button>
+    <button id=checkAnswers>Check answers!</button>
+    <button id=retryQuiz>Retry quiz</button>
+    <div id = result-container></div>
     <script src="script.js"></script>
 </body>
 </html>
