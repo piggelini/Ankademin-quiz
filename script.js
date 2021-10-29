@@ -67,7 +67,7 @@ checkAnswersButton.addEventListener('click', () => {
         resultContainer.className = "result";
         result.style.color = "limegreen";
         resultContainer.appendChild(result);
-    } else if (points >= 5){
+    } else if (points > 5){
         result.innerText = points + " of 10";
         result.style.color = "orange";
         resultContainer.className = "result";
