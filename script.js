@@ -15,6 +15,7 @@ checkAnswersButton.addEventListener('click', () => {
     let points = 0;
     let result = document.createElement('h2');
     let rightCheckboxes = 0;
+    let wrongCheckboxes = 0;
 
     
 
@@ -23,8 +24,10 @@ checkAnswersButton.addEventListener('click', () => {
     radioInputs.forEach((input) => {
         if (input.checked && input.value === "right"){
             points++;
+    //If the answer is right the label turns green.
             input.className = "greenlabel";
         } else if(input.checked && input.value === "wrong") {
+    //If the answer is wrong the label turns red.
             input.className = "redlabel";
         }
         //Disables the radios.
@@ -35,28 +38,34 @@ checkAnswersButton.addEventListener('click', () => {
     checkboxInputs.forEach((input) => {
         if (input.checked && input.value === "right"){
             rightCheckboxes++;
-            input.className = "greenlabel";
-        } else if(input.checked && input.value === "wrong"){
-            input.className = "redlabel";
+        //Counts the number of the wrong checkboxes checked.
+        } else if (input.checked && input.value === "wrong"){
+            wrongCheckboxes++;
         }
         //Disables the checkboxes.
         input.disabled = true;
     });
-    //Checks if all the rightCheckboxes are checked.  
-    if (rightCheckboxes === 4){
+    //Checks if all the right Checkboxes are checked.  
+    if (rightCheckboxes === 4 && wrongCheckboxes === 0){
         points++;
+        checkboxInputs.forEach((input) => {
+    //The labels only gets green when all 4 right boxes are checked.
+            if (input.checked && input.value === "right"){
+            input.className = "greenlabel";
+            }
+        });
     }
 
     //Display result/points in different styles
     if(points === 10){
-        result.innerText = "CONGRATS! " + points + " of 10";
-        result.style.color = "lightgreen";
+        result.innerText = "WELL DONE! " + points + " of 10";
+        result.style.color = "limegreen";
         resultContainer.className = "result";
         resultContainer.appendChild(result);
     } else if(points >= 8){
         result.innerText = points + " of 10";
         resultContainer.className = "result";
-        result.style.color = "lightgreen";
+        result.style.color = "limegreen";
         resultContainer.appendChild(result);
     } else if (points >= 5){
         result.innerText = points + " of 10";
@@ -70,8 +79,6 @@ checkAnswersButton.addEventListener('click', () => {
     }
     //Scrolls to bottom of page to show result.
     window.scrollTo(0,document.body.scrollHeight);
-
-    
 
     });
 
