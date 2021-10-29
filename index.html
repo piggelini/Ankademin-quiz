@@ -9,59 +9,64 @@
 </head>
 <body>
    
-    <h1>The Beatles QUIZ</h1> <div>
-        <button id='colorMode'>Dark mode</button>
+   <div id= 'pageTop'> <h1 id='heading'>The Beatles QUIZ</h1> 
+        <div class= 'buttonContainer' id='colorButtonContainer'>
+            <button class='buttons' id='colorMode'>Dark mode</button>
+        </div>
     </div>
+
     <div id='qa-container'>
         <ol id='qa-list'>
-            <li>Which year did the Beatles form?</li>
-            <label for="1959">1959</label><input type="radio" name="year" value='wrong' id="1959">
-            <label for="1960">1960</label><input type="radio" name="year" value='right' id="1960">
-            <label for="1961">1961</label><input type="radio" name="year" value= 'wrong' id="1961">
-            <li>In which english city did the Beatles form?</li>
-            <label for="birmingham">Birmingham</label><input type="radio" name="city" value="wrong" id="birmingham">
-            <label for="manchester">Manchester</label><input type="radio" name="city" value= "wrong" id="manchester">
-            <label for="liverpool">Liverpool</label><input type="radio" name="city" value="right" id="liverpool">
-            <li>How many years were the Beatles active? </li>
-            <label for="10years">10 years</label><input type="radio" name="active" value="right" id="10years">
-            <label for="13years">13 years</label><input type="radio" name="active" value= "wrong" id="13years">
-            <label for="11years">11 years</label><input type="radio" name="active" value= "wrong" id="11years">
-            <li>Which beatle played the bass?</li>
-            <label for="lennon">John Lennon</label><input type="radio" name="bass" value= "wrong" id="lennon">
-            <label for="mccartney">Paul McCartney</label><input type="radio" name="bass" value= "right" id="mccartney">
-            <label for="harrison">George Harrison</label><input type="radio" name="bass" value= "wrong" id="harrison">
-            <label for="starr">Ringo Starr</label><input type="radio" name="bass" value= "wrong" id="starr">
-            <li>Which of these alternatives are a song/songs of the Beatles?</li>
-            <label for="fool">Fool On The Hill</label><input type="checkbox" name="song" value='right' id="fool">
-            <label for="feeling">I've Got a Feeling</label><input type="checkbox" name="song" value='right' id="feeling">
-            <label for="paperback">Paperback Writer</label> <input type="checkbox" name="song" value= 'right' id="paperback"> 
-            <label for="letter">The Letter</label><input type="checkbox" name="song" value='wrong' id="letter">
-            <label for="buy">Can't Buy Me Love</label> <input type="checkbox" name="song" value='right' id="buy">
-            <li>What's the name of the Beatles first album?</li>
-            <label for="please">Please Please Me</label><input type="radio" name="first" value= "right" id="please">
-            <label for="sale">Beatles for Sale</label><input type="radio" name="first" value= "wrong" id="sale">
-            <label for="with">With the Beatles</label><input type="radio" name="first" value= "wrong" id="with">
-            <li>Which of the following beatles is singing in the song Yellow Submarine?</li>
-            <label for="george">George Harrison</label><input type="radio" name="submarine" value= "wrong" id="george">
-            <label for="john">John Lennon</label><input type="radio" name="submarine" value= "wrong" id="john">
-            <label for="ringo">Ringo Starr</label><input type="radio" name="submarine" value= "right" id="ringo">
-            <li>Which song is from the album Abbey Road?</li>
-            <label for="come">Come Together</label><input type="radio" name="abbey" value= "right" id="come">
-            <label for="across">Across the Universe</label><input type="radio" name="abbey" value= "wrong" id="across">
-            <label for="gun">Happiness Is a Warm Gun</label><input type="radio" name="abbey" value= "wrong" id="gun">
-            <li>Which studio album by the band was the twelfth and last one?</li>
-            <label for="abbey">Abbey Road</label><input type="radio" name="last" value= "wrong" id="abbey">
-            <label for="let">Let It Be</label><input type="radio" name="last" value= "right" id="let">
-            <label for="white">The Beatles(The White Album)</label><input type="radio" name="last" value="wrong" id="white">
-            <li>Which year did Paul McCartney issue a press release stating the bands break-up?</li>
-            <label for="1970">1970</label><input type="radio" name="break-up" id="1970" value="right">
-            <label for="1971">1971</label><input type="radio" name="break-up" id="1971" value="wrong">
-            <label for="1972">1972</label><input type="radio" name="break-up" id="1972" value="wrong">
+            <li class= 'list' name="year">Which year did the Beatles form?</li>
+            <input type="radio" name="year" value='wrong' id="1959"><label for="1959">1959</label>
+            <input type="radio" name="year" value='right' id="1960"><label for="1960">1960</label>
+            <input type="radio" name="year" value= 'wrong' id="1961"><label for="1961">1961</label>
+            <li class= 'list' name="city">In which english city did the Beatles form?</li>
+            <input type="radio" name="city" value="wrong" id="birmingham"><label for="birmingham">Birmingham</label>
+            <input type="radio" name="city" value= "wrong" id="manchester"><label for="manchester">Manchester</label>
+            <input type="radio" name="city" value="right" id="liverpool"><label for="liverpool">Liverpool</label>
+            <li class= 'list' class= "active">How many years were the Beatles active? </li>
+            <input type="radio" name="active" value="right" id="10years"><label for="10years">10 years</label>
+            <input type="radio" name="active" value= "wrong" id="13years"><label for="13years">13 years</label>
+            <input type="radio" name="active" value= "wrong" id="11years"><label for="11years">11 years</label>
+            <li class= 'list'  name="bass">Which beatle played the bass?</li>
+            <input type="radio" name="bass" value= "wrong" id="lennon"><label for="lennon">John Lennon</label>
+            <input type="radio" name="bass" value= "right" id="mccartney"><label for="mccartney">Paul McCartney</label>
+            <input type="radio" name="bass" value= "wrong" id="harrison"><label for="harrison">George Harrison</label>
+            <input type="radio" name="bass" value= "wrong" id="starr"><label for="starr">Ringo Starr</label>
+            <li class= 'list' name="song">Which of these alternatives are a song/songs of the Beatles?</li>
+            <input type="checkbox" name="song" value='right' id="fool"><label for="fool">The Fool On The Hill</label>
+            <input type="checkbox" name="song" value='right' id="feeling"><label for="feeling">I've Got a Feeling</label>
+            <input type="checkbox" name="song" value= 'right' id="paperback"><label for="paperback">Paperback Writer</label> 
+            <input type="checkbox" name="song" value='wrong' id="letter"><label for="letter">The Letter</label>
+            <input type="checkbox" name="song" value='right' id="buy"><label for="buy">Can't Buy Me Love</label>
+            <li class= 'list' name="first">What's the name of the Beatles first album?</li>
+            <input type="radio" name="first" value= "right" id="please"><label for="please">Please Please Me</label>
+            <input type="radio" name="first" value= "wrong" id="sale"> <label for="sale">Beatles for Sale</label>
+            <input type="radio" name="first" value= "wrong" id="with"><label for="with">With the Beatles</label>
+            <li class= 'list' name="submarine">Which of the following beatles is singing in the song Yellow Submarine?</li>
+            <input type="radio" name="submarine" value= "wrong" id="george"> <label for="george">George Harrison</label>
+            <input type="radio" name="submarine" value= "wrong" id="john"> <label for="john">John Lennon</label>
+            <input type="radio" name="submarine" value= "right" id="ringo"><label for="ringo">Ringo Starr</label>
+            <li class= 'list' name="abbey">Which song is from the album Abbey Road?</li>
+            <input type="radio" name="abbey" value= "right" id="come"><label for="come">Come Together</label>
+            <input type="radio" name="abbey" value= "wrong" id="across"> <label for="across">Across the Universe</label>
+            <input type="radio" name="abbey" value= "wrong" id="gun"><label for="gun">Happiness Is a Warm Gun</label>
+            <li class= 'list' name="last">Which studio album by the band was the twelfth and last one?</li>
+            <input type="radio" name="last" value= "wrong" id="abbey"><label for="abbey">Abbey Road</label>
+            <input type="radio" name="last" value= "right" id="let"><label for="let">Let It Be</label>
+            <input type="radio" name="last" value="wrong" id="white"><label for="white">The Beatles (The White Album)</label>
+            <li class= 'list' name="break-up">Which year did Paul McCartney issue a press release stating the bands break-up?</li>
+            <input type="radio" name="break-up" id="1970" value="right"> <label for="1970">1970</label>
+            <input type="radio" name="break-up" id="1971" value="wrong"><label for="1971">1971</label>
+            <input type="radio" name="break-up" id="1972" value="wrong"><label for="1972">1972</label>
         </ol>
     </div>
-    <button id=checkAnswers>Check answers!</button>
-    <button id=retryQuiz>Retry quiz</button>
-    <div id = result-container></div>
+    <div class=bottom-buttons>
+        <div class='buttonContainer'> <button class='buttons'id=checkAnswers>Check answers!</button></div>
+        <div class= 'buttonContainer'><button class='buttons' id=retryQuiz>Retry quiz</button></div> 
+    </div>
+    <div id = 'result-container'></div>
     <script src="script.js"></script>
 </body>
 </html>

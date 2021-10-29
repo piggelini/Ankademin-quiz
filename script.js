@@ -4,70 +4,91 @@ let checkAnswersButton = document.querySelector("#checkAnswers");
 let retryButton = document.querySelector("#retryQuiz");
 let radioInputs = document.querySelectorAll("[type = 'radio']");
 let checkboxInputs = document.querySelectorAll("[type = 'checkbox']");
+let resultContainer = document.querySelector("#result-container");
+let bodyColor = document.querySelector('body');
+let questions = document.querySelectorAll('li');
 
 //Check answers! button
 checkAnswersButton.addEventListener('click', () => {
+    resultContainer.innerHTML = "";
 
     let points = 0;
-    let resultContainer = document.querySelector("#result-container");
     let result = document.createElement('h2');
     let rightCheckboxes = 0;
 
-    //Radios
+    
+
+
+    //Radios - counts the right answers.
     radioInputs.forEach((input) => {
         if (input.checked && input.value === "right"){
             points++;
+            input.className = "greenlabel";
+        } else if(input.checked && input.value === "wrong") {
+            input.className = "redlabel";
         }
+        //Disables the radios.
+        input.disabled = true;
     });
 
-    // CheckBoxes
+    //CheckBoxes - counts the number of the right checkboxes checked.
     checkboxInputs.forEach((input) => {
         if (input.checked && input.value === "right"){
             rightCheckboxes++;
+            input.className = "greenlabel";
+        } else if(input.checked && input.value === "wrong"){
+            input.className = "redlabel";
         }
+        //Disables the checkboxes.
+        input.disabled = true;
     });
-
+    //Checks if all the rightCheckboxes are checked.  
     if (rightCheckboxes === 4){
         points++;
     }
 
-    //Display result/points in different colors
+    //Display result/points in different styles
     if(points === 10){
-        result.innerText = "CONGRATULATIONS! " + points + " of 10";
+        result.innerText = "CONGRATS! " + points + " of 10";
         result.style.color = "lightgreen";
+        resultContainer.className = "result";
         resultContainer.appendChild(result);
     } else if(points >= 8){
         result.innerText = points + " of 10";
+        resultContainer.className = "result";
         result.style.color = "lightgreen";
         resultContainer.appendChild(result);
     } else if (points >= 5){
         result.innerText = points + " of 10";
         result.style.color = "orange";
+        resultContainer.className = "result";
         resultContainer.appendChild(result);
-
     } else {
         result.innerText = points + " of 10";
+        resultContainer.className = "result";
         resultContainer.appendChild(result);
     }
+    //Scrolls to bottom of page to show result.
+    window.scrollTo(0,document.body.scrollHeight);
 
+    
 
     });
 
 
-//Retry knappen
+//Retry button
 retryButton.addEventListener('click', () => {
     location.reload();
-})
+});
 
 //Dark mode vs Light mode button
 colorModeButton.addEventListener('click', () => {
-    let bodyColor = document.querySelector('body');
     if (colorModeButton.innerHTML === "Light mode"){
         bodyColor.style.backgroundColor = "white";
         bodyColor.style.color = 'black';
         colorModeButton.innerHTML = 'Dark mode';
     }else{
-    bodyColor.style.backgroundColor = "black";
+    bodyColor.style.backgroundColor = "#272C30";
     bodyColor.style.color = 'lightgray';
     colorModeButton.innerHTML = 'Light mode';
     }
